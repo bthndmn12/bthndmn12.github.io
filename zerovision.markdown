@@ -13,6 +13,10 @@ Segmentation is a primary step in this measurement process. We employ Meta's sta
 
 The model excels in detecting particles, foam, and bubbles on the water's surface. However, based on literature suggesting fine-tuning and Federated Learning could enhance performance, we experimented with these methods. Our experiments with specific techniques mentioned in the Literature Analysis section and testing of SAM model variants yielded generally successful results.
 
+{% include hfspace.html %}
+
+
+
 ## Project Documentation
 
 Below is a list of documentation available for the ZeroVision project:
