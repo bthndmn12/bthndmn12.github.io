@@ -17,9 +17,6 @@ The model excels in detecting particles, foam, and bubbles on the water's surfac
 
 Below is a list of documentation available for the ZeroVision project:
 
-<!-- {% for doc in site.docs %}
-1. [{{ doc.title }}]({{ doc.url | relative_url }})
-{% endfor %} -->
 
 {% include sidebar.html %}
 
