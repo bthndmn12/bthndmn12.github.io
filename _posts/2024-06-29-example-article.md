@@ -25,12 +25,12 @@ Inspired by the Ginzburg-Landau free energy functional, we've designed a custom 
 
  $$\mathcal{L}( \phi, \text{target} ) = \left| \text{mean} \left( \alpha (\phi_{\text{norm}} - \text{target}_{\text{norm}})^2 - \gamma (\phi_{\text{norm}} - \text{target}_{\text{norm}})^4 + 0.5 \left( \frac{\partial \phi_{\text{norm}}}{\partial x} \right)^2 \right) \right| $$
 Where:
-- $\phi_{\text{norm}} = \frac{\phi}{\max(|\phi|)}$
-- $\text{target}_{\text{norm}} = \frac{\text{target\_one\_hot}}{\max(|\text{target\_one\_hot}|)}$
-- $\frac{\partial \phi_{\text{norm}}}{\partial x} \approx \frac{\phi_{\text{norm}}(i+1) - \phi_{\text{norm}}(i-1)}{2}$
--  $\alpha$ is the coefficient for the quadratic term that encourages the network's output to match the target values.
-- $\beta$ is the coefficient for the quartic term that allows for multiple stable states.
-- $\gamma$ is the coefficient for the spatial term that promotes coherence in the network's outputs across spatial dimensions.
+- $$\phi_{\text{norm}} = \frac{\phi}{\max(|\phi|)}$$
+- $$\text{target}_{\text{norm}} = \frac{\text{target\_one\_hot}}{\max(|\text{target\_one\_hot}|)}$$
+- $$\frac{\partial \phi_{\text{norm}}}{\partial x} \approx \frac{\phi_{\text{norm}}(i+1) - \phi_{\text{norm}}(i-1)}{2}$$
+-  $$\alpha$$ is the coefficient for the quadratic term that encourages the network's output to match the target values.
+- $$\beta$$ is the coefficient for the quartic term that allows for multiple stable states.
+- $$\gamma$$ is the coefficient for the spatial term that promotes coherence in the network's outputs across spatial dimensions.
 
 ### Breakdown of the Loss Function
 
@@ -45,9 +45,9 @@ Another unique feature of our network is its dynamic weight modification scheme:
 $$\mathbf{W} = \mathbf{W}_0 \cdot \left( \cosh(5\beta) \cdot \mathbf{a} + t_{\text{dynamic}} \cdot \sinh(5\beta) \right) $$
 
 where:
-- $\mathbf{W}_0$ is the initial weight matrix.
-- $\beta$ is a learned parameter.
-- $t_{\text{dynamic}}$ İs a dynamic term that adapts based on the input.
+- $$\mathbf{W}_0$$ is the initial weight matrix.
+- $$\beta$$ is a learned parameter.
+- $$t_{\text{dynamic}}$$ İs a dynamic term that adapts based on the input.
 
 ### Explanation
 
@@ -58,40 +58,40 @@ This might look complex, but the idea is simple yet powerful: the network adapts
 
 To train our network, we've developed a custom optimizer inspired by Langevin dynamics, a concept from statistical physics used to describe the motion of particles in a fluid:
 
-For each parameter \(\theta_i\):
+For each parameter $$\theta_i$$ :
 
 1. **Compute the loss gradient with respect to each parameter:**
-$F_i = -\frac{\partial \mathcal{L}}{\partial \theta_i}$
+$$F_i = -\frac{\partial \mathcal{L}}{\partial \theta_i}$$
 where $\mathcal{L}$ is the loss function, and $F_i$ is the force (negative gradient) applied to $\theta_i$
 
 2. **Update the velocity:**
-$v_i \leftarrow (1 - \gamma) v_i + \alpha F_i + \sqrt{2 \gamma \alpha T} \cdot \eta_i$
-where \(\eta_i\) is a noise term sampled from a standard normal distribution \(\mathcal{N}(0, 1)\).
+$$v_i \leftarrow (1 - \gamma) v_i + \alpha F_i + \sqrt{2 \gamma \alpha T} \cdot \eta_i$$
+where $$\eta_i$$ is a noise term sampled from a standard normal distribution $$\mathcal{N}(0, 1)$$.
 
 3. **Update the parameter:**
-$\theta_i \leftarrow \theta_i + v_i$
+$$\theta_i \leftarrow \theta_i + v_i$$
 
 ### Full Update Equation
 
 For each parameter $\theta_i$ :
 
-$v_i \leftarrow (1 - \gamma) v_i - \alpha \frac{\partial \mathcal{L}}{\partial \theta_i} + \sqrt{2 \gamma \alpha T} \cdot \eta_i$
+$$v_i \leftarrow (1 - \gamma) v_i - \alpha \frac{\partial \mathcal{L}}{\partial \theta_i} + \sqrt{2 \gamma \alpha T} \cdot \eta_i$$
 
-$\theta_i \leftarrow \theta_i + v_i$
+$$\theta_i \leftarrow \theta_i + v_i$$
 
 Where:
-- $\alpha$ is the learning rate.
-- $\gamma$ is the damping coefficient.
-- $T$ is the temperature.
-- $\eta_i \sim \mathcal{N}(0, 1)$ is the noise term.
+- $$\alpha$$ is the learning rate.
+- $$\gamma$$ is the damping coefficient.
+- $$T$$ is the temperature.
+- $$\eta_i \sim \mathcal{N}(0, 1)$$ is the noise term.
 
 ### Combined in a Single Expression
 
 Combining both steps, we get the following update rules for each parameter \(\theta_i\):
 
-$v_i \leftarrow (1 - \gamma) v_i - \alpha \frac{\partial \mathcal{L}}{\partial \theta_i} + \sqrt{2 \gamma \alpha T} \cdot \eta_i$
+$$v_i \leftarrow (1 - \gamma) v_i - \alpha \frac{\partial \mathcal{L}}{\partial \theta_i} + \sqrt{2 \gamma \alpha T} \cdot \eta_i$$
 
-$\theta_i \leftarrow \theta_i + v_i$
+$$\theta_i \leftarrow \theta_i + v_i$$
 
 This optimizer introduces concepts of velocity, damping, and temperature into the learning process. The idea is to allow the network to explore the loss landscape more thoroughly, potentially escaping local minima and finding better global solutions.
 
