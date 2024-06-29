@@ -32,6 +32,12 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Add Kramdown configuration
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+
 collections:
   docs:
     output: true
