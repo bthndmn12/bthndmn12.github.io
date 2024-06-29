@@ -3,6 +3,8 @@ layout: post
 title:  "Experimental Neural Network: Bridging Physics and Machine Learning"
 date:   2024-06-28 12:45:00 +0100
 categories: jekyll update
+kramdown:
+  math_engine: mathjax
 ---
 In the ever-evolving landscape of artificial intelligence, we're constantly seeking new ways to improve our neural networks. Today, I'm excited to share with you an experimental neural network that draws inspiration from fundamental theories in physics. This novel approach aims to enhance the learning capabilities of neural networks by incorporating principles from statistical physics and dynamical systems.
 
