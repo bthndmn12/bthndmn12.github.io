@@ -128,13 +128,13 @@ $$\text{d\_loss}_x = \frac{\text{d\_loss}_{i+1} - \text{d\_loss}_{i-1}}{2}$$
 3. **Compute the force term:**
 $$\text{force} = -\kappa \cdot \text{d\_loss}_x$$
 
-4. **Compute the second spatial derivative of \(\beta\) (Laplacian term):**
+4. **Compute the second spatial derivative of $$\beta$$:**
 $$\beta_{xx} = \beta_{i+1} - 2\beta_i + \beta_{i-1}$$
 
 5. **Compute the time derivative of $$\beta$$:**
  $$\beta_t = \frac{\beta - \beta_{\text{previous}}}{dt}$$
 
-6. **Update \(\beta\) using the combined terms:**
+6. **Update $$\beta$$ using the combined terms:**
 $$\beta \leftarrow \beta + dt \left( \beta_t - \beta_{xx} + \beta - \beta^3 + \text{force} \right)$$
 
 Putting these steps together, the beta update rule can be written as:
