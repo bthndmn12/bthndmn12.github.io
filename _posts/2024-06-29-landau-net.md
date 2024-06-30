@@ -310,11 +310,9 @@ class ExperimentalNet(nn.Module):
         self.bn1 = nn.BatchNorm1d(hidden_size)
 
     def forward(self, x):
-	    # rrelu stable while model 1 layer
         # x = F.rrelu(self.bn1(self.layer1(x)))
         x = F.rrelu(self.bn1 (self.llayer1(x)))
         x = F.rrelu(self.llayer2(x))
         return x
 ```
 
-## References
