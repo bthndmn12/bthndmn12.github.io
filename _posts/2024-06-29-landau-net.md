@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Landau Network: The Travelling Wave and Results"
-date:   2024-06-28 12:45:00 +0100
+date:   2024-06-30 03:14:15 +0100
 categories: jekyll update
-
+author: 'Mehmet Batuhan Duman'
 ---
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -165,12 +165,12 @@ To provide a clear comparison, here's how our experimental neural network perfor
 ![Description]({{ site.baseurl }}/assets/images/loss_1layer_mish.png)
 ##### 1 Layer Experimental NN with Mish activation and batch norm
 
-![](/posts/images/loss_2layer_mish.png)
+![]({{ site.baseurl }}/assets/images/loss_2layer_mish.png)
 ##### 2 Layer Experimental NN with Mish activation and batch norm
 
 #### Example Outputs from 1 Layer Experimental NN
 
-![](/posts/images/1LayerMNIST.png)
+![]({{ site.baseurl }}/assets/images/1LayerMNIST.png)
 ##### 1 Layer Experimental Net Example Test Set Output
 
 
@@ -190,37 +190,40 @@ To provide a clear comparison, here's how our experimental neural network perfor
 
 
 
-### Example Visualization
+### Visualization with Some Datasets
 <!-- ![First Dataset](/docs/1.2 20240201174519.png) -->
-![1 Layer Example on Circle dataset](/posts/images/circles_boundary.gif)
 ##### 1 Layer Example on Circle dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/circles_boundary.gif)
 
 
-![1 Layer Example on Circle dataset](/posts/images/circles_boundary_2layer.gif)
 ##### 2 Layer Example on Circle dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/circles_boundary_2layer.gif)
 
 
-![1 Layer Example on Circle dataset](/posts/images/circles_boundary_2layer_2.gif)
 ##### 2 Layer Example on Circle dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/circles_boundary_2layer_2.gif)
 
 
-![1 Layer Example on Circle dataset](/posts/images/classification_boundary.gif)
 ##### 1 Layer Example on Classification dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/classification_boundary.gif)
 
 
-![1 Layer Example on Circle dataset](/posts/images/classification_boundary_1.gif)
 ##### 1 Layer Example on Classification dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/classification_boundary_2layer_1.gif)
 
 
-![1 Layer Example on Circle dataset](/posts/images/moons_boundary.gif)
 ##### 1 Layer Example on Moons dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/moons_boundary.gif)
 
-![1 Layer Example on Circle dataset](/posts/images/moons_boundary_2layer_1.gif)
 ##### 2 Layer Example on Moons dataset
+![1 Layer Example on Circle dataset]({{ site.baseurl }}/assets/images/moons_boundary_2layer_1.gif)
+
+
 ### Code Snippet for the ExperimentalLayer
 
 Here's a more detailed code snippet of the ExperimentalLayer to give readers a clearer picture of its implementation:
 
+### Landau Layer with Traveling Wave Approach
 ```python
 class LandauLayer(nn.Module):
     def __init__(self, input_size, output_size, beta_init, alpha=0.0035, gamma=5.0):
@@ -269,7 +272,9 @@ class LandauLayer(nn.Module):
         mean_d_loss = d_loss.mean()
         return torch.abs(mean_d_loss)
 ```
+---
 
+### Modified Langevin Optimizer
 ```python
 class LangevinLandauOptimizer:
     def __init__(self, model, learning_rate=0.001, damping=0.1, temperature=0.8):
@@ -294,8 +299,8 @@ class LangevinLandauOptimizer:
 
         return d_loss.item()
 ```
-
-
+---
+### Simple Network
 ```python
 class ExperimentalNet(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, beta_init):
@@ -311,3 +316,5 @@ class ExperimentalNet(nn.Module):
         x = F.rrelu(self.llayer2(x))
         return x
 ```
+
+## References
