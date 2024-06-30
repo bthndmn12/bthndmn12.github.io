@@ -162,7 +162,7 @@ By combining these physics-inspired components - the Ginzburg-Landau-based loss 
 
 To provide a clear comparison, here's how our experimental neural network performs on MNIST dataset across various metrics:
 
-![](/posts/images/loss_1layer_mish.png)
+![Description]({{ site.baseurl }}/assets/images/loss_1layer_mish.png)
 ##### 1 Layer Experimental NN with Mish activation and batch norm
 
 ![](/posts/images/loss_2layer_mish.png)
