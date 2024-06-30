@@ -83,7 +83,6 @@ The weights of the neural network, which are represented by the agents in the GS
 
 ![](https://cdn-images-1.medium.com/max/800/1*ttGVAKfX0CiBV7AJEQ8-jA.png)
 
-![](https://cdn-images-1.medium.com/max/800/1*dMbvnjzzccgw1hec7U5ZzQ.png)
 
 In this example parameters are in the below
 
@@ -108,7 +107,6 @@ goal_pred = np.float32(0.9)
 input_data = np.full(n_inputs, 0.2, dtype=np.float32)
 ```
 
-![](https://cdn-images-1.medium.com/max/800/1*TGBVnUVl3g7937C0eoGx4w.gif)
 
 #### REFERENCES
 
