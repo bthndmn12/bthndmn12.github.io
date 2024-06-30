@@ -160,6 +160,11 @@ By combining these physics-inspired components - the Ginzburg-Landau-based loss 
 
 ## Experimental Results
 
+#### Example Outputs from 1 Layer Experimental NN
+
+![]({{ site.baseurl }}/assets/images/1LayerMNIST.png)
+##### 1 Layer Experimental Net Example Test Set Output
+
 To provide a clear comparison, here's how this experimental neural network performs on MNIST dataset across various metrics:
 
 ![Description]({{ site.baseurl }}/assets/images/loss_1layer_mish.png)
@@ -168,10 +173,7 @@ To provide a clear comparison, here's how this experimental neural network perfo
 ![]({{ site.baseurl }}/assets/images/loss_2layer_mish.png)
 ##### 2 Layer Experimental NN with Mish activation and batch norm
 
-#### Example Outputs from 1 Layer Experimental NN
 
-![]({{ site.baseurl }}/assets/images/1LayerMNIST.png)
-##### 1 Layer Experimental Net Example Test Set Output
 
 
 | Metric            | 1 Layer    | 2 Layer    |
