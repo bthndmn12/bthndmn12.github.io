@@ -131,7 +131,7 @@ $$\text{force} = -\kappa \cdot \text{d\_loss}_x$$
 4. **Compute the second spatial derivative of \(\beta\) (Laplacian term):**
 $$\beta_{xx} = \beta_{i+1} - 2\beta_i + \beta_{i-1}$$
 
-5. **Compute the time derivative of \(\beta\):**
+5. **Compute the time derivative of $$\beta$$:**
  $$\beta_t = \frac{\beta - \beta_{\text{previous}}}{dt}$$
 
 6. **Update \(\beta\) using the combined terms:**
