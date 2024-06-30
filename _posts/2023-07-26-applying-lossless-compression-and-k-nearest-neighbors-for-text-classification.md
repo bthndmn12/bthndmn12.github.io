@@ -3,7 +3,7 @@ layout: post
 title:  "Applying Lossless Compression and k-Nearest Neighbors for Text Classification"
 date:   2023-07-26 12:45:00 +0100
 categories: jekyll update
-
+author: 'Mehmet Batuhan Duman'
 ---
 
 > In the past weeks, an intriguing article was published on text classification. This article aims to provide simple but effective text classification using k-nearest-neighbors (kNN) and gzip, in contrast to Deep Neural Networks (DNNs). Although DNNs yield high results in text classification, they require extensive processing, millions of parameters, and a large number of labeled data. However, this article suggests a lightweight method that delivers good results without requiring any parameters or training. In this post, we will test this application using a dataset consisting of approximately 300 Turkish questions and answers related to law.

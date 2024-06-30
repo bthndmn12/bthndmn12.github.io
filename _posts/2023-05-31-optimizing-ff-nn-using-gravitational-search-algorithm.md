@@ -1,10 +1,9 @@
-
 ---
 layout: post
 title:  "Optimizing FF-NN using Gravitational Search Algorithm"
 date:   2023-05-31 12:45:00 +0100
 categories: jekyll update
-
+author: 'Mehmet Batuhan Duman'
 ---
 
 > _In the context of neural networks, this article gives a thorough analysis and use of the Gravitational Search Algorithm (GSA). The GSA is an optimization method that borrows principles from nature and imitates the effects of mass and gravity. To maximize the weights of the network, the technique is combined with a feed-forward neural network. A Python implementation of the GSA for optimizing the weights of a neural network with a single hidden layer is shown in the provided code. Using matplotlib, the evaluation of the algorithm’s performance is done over a number of epochs. Scholarly studies exploring the use of GSA in neural networks and its benefits over conventional optimization techniques are among the sources considered for this study._
