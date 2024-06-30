@@ -21,13 +21,13 @@ Machine learning and physics might seem like two distinct fields, but they share
 
 ## The Inspiration: Ginzburg-Landau Theory
 
-At the heart of our experimental neural network lies the Ginzburg-Landau theory, a powerful framework originally developed to describe superconductivity and other phase transitions in physical systems. But what does superconductivity have to do with neural networks, you might ask?
+At the heart of experimental neural network lies the Ginzburg-Landau theory, a powerful framework originally developed to describe superconductivity and other phase transitions in physical systems. But what does superconductivity have to do with neural networks, you might ask?
 
 The key insight is this: both superconducting systems and neural networks can be thought of as complex systems trying to find optimal configurations. In superconductors, it's about finding the state of lowest energy. In neural networks, it's about finding the configuration that best fits the data.
 
 ## The Custom Loss Function: A Physics-Inspired Approach
 
-Inspired by the Ginzburg-Landau free energy functional, we've designed a custom loss function for our network:
+Inspired by the Ginzburg-Landau free energy functional, we've designed a custom loss function for this network:
 
 $$
 \mathcal{L}( \phi, \text{target} ) = \left| \text{mean} \left( \alpha (\phi_{\text{norm}} - \text{target}_{\text{norm}})^2 - \gamma (\phi_{\text{norm}} - \text{target}_{\text{norm}})^4 + 0.5 \left( \frac{\partial \phi_{\text{norm}}}{\partial x} \right)^2 \right) \right|
@@ -49,7 +49,7 @@ Where:
 
 ## Dynamic Weight Modification: Adapting to Input
 
-Another unique feature of our network is its dynamic weight modification scheme:
+Another unique feature of this network is its dynamic weight modification scheme:
 
 $$
 \mathbf{W} = \mathbf{W}_0 \cdot \left( \cosh(5\beta) \cdot \mathbf{a} + t_{\text{dynamic}} \cdot \sinh(5\beta) \right)
@@ -66,7 +66,7 @@ This might look complex, but the idea is simple yet powerful: the network adapts
 
 ## Physics-Inspired Optimization: Langevin Dynamics
 
-To train our network, we've developed a custom optimizer inspired by Langevin dynamics, a concept from statistical physics used to describe the motion of particles in a fluid:
+To train this network, we've developed a custom optimizer inspired by Langevin dynamics, a concept from statistical physics used to describe the motion of particles in a fluid:
 
 ### Step Method Equation
 
@@ -160,7 +160,7 @@ By combining these physics-inspired components - the Ginzburg-Landau-based loss 
 
 ## Experimental Results
 
-To provide a clear comparison, here's how our experimental neural network performs on MNIST dataset across various metrics:
+To provide a clear comparison, here's how this experimental neural network performs on MNIST dataset across various metrics:
 
 ![Description]({{ site.baseurl }}/assets/images/loss_1layer_mish.png)
 ##### 1 Layer Experimental NN with Mish activation and batch norm
