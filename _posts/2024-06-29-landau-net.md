@@ -66,7 +66,7 @@ This might look complex, but the idea is simple yet powerful: the network adapts
 
 ## Physics-Inspired Optimization: Langevin Dynamics
 
-To train this network, we've developed a custom optimizer inspired by Langevin dynamics, a concept from statistical physics used to describe the motion of particles in a fluid:
+To train this network, I've developed a custom optimizer inspired by Langevin dynamics, a concept from statistical physics used to describe the motion of particles in a fluid:
 
 ### Step Method Equation
 
@@ -143,7 +143,7 @@ $$\beta_{t+1} \leftarrow \beta_t + dt \left( \frac{\beta_t - \beta_{t-1}}{dt} - 
 
 ## Putting It All Together: A New Paradigm for Neural Networks
 
-By combining these physics-inspired components - the Ginzburg-Landau-based loss function, dynamic weight modification, and Langevin dynamics-inspired optimization - we've created a neural network that operates on principles quite different from traditional architectures.
+By combining these physics-inspired components - the Ginzburg-Landau-based loss function, dynamic weight modification, and Langevin dynamics-inspired optimization - i've created a neural network that operates on principles quite different from traditional architectures.
 
 ### Potential Benefits
 
