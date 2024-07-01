@@ -3,7 +3,6 @@ layout: post
 title:  "Landau Network: The Travelling Wave and Results"
 date:   2024-06-30 03:14:15 +0100
 categories: jekyll update
-permalink: /landaunet/
 author: 'Mehmet Batuhan Duman'
 ---
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
